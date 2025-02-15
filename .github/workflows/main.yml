@@ -1,0 +1,20 @@
+name: Publicar Pagina a Surge.sh
+
+on:
+  push:
+    branches:
+      - main  # Esta es la rama que debe hacer el push
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clonar el repositorio
+        uses: actions/checkout@v3
+
+      - name: Instalar Surge
+        run: npm install --global surge
+
+      - name: Publicar pagina
+       run: surge --project ./ --domain Meliodas141304/202010654.surge.sh --token ${{ secrets.SURGE_API_KEY }
