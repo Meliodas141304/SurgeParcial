@@ -1,0 +1,23 @@
+name: Deploy to Surge
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Build and Deploy
+      run: |
+        # Configurar Surge.sh
+        npm install --global surge
+        surge token <SURGE_API_KEY> # Reemplazar <SURGE_API_KEY> con la API Key de Surge de cada estudiante
+
+        # Desplegar en Surge.sh
+        surge --project ./ --domain <SURGE_SUBDOMAIN>.surge.sh # Reemplazar <SURGE_SUBDOMAIN> con un subdominio único para cada estudiante
