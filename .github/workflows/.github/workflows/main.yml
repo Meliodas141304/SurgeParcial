@@ -10,14 +10,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
+    - name: Clonar el repositorio
       uses: actions/checkout@v2
 
-    - name: Build and Deploy
-      run: |
-        # Configurar Surge.sh
-        npm install --global surge
-        surge token <SURGE_API_KEY> # Reemplazar <SURGE_API_KEY> con la API Key de Surge de cada estudiante
+    - name: Instalar Surge
+      run: npm install --global surge
 
-        # Desplegar en Surge.sh
-        surge --project ./ --domain <SURGE_SUBDOMAIN>.surge.sh # Reemplazar <SURGE_SUBDOMAIN> con un subdominio único para cada estudiante
+      - name: Publicar pagina
+        run: surge --project ./ --domain .surge.sh --token ${{ secrets.SURGE_API_KEY }
