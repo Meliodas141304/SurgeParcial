@@ -10,12 +10,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Clonar el repositorio
+      - name: SurgeParcial
         uses: actions/checkout@v3
 
       - name: Instalar Surge
         run: npm install --global surge
-        
           surge login --token ${{ secrets.SURGE_API_KEY }}
+          
+      - name: Publicar pagina
+        run: surge --project ./ --domain  www.luisantonio.surge.sh --token ${{ secrets.SURGE_API_KEY }}
 
-          surge --project ./ --domain  www.luisantonio.surge.sh
+
+
+          
