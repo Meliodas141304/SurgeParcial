@@ -16,6 +16,5 @@ jobs:
       - name: Instalar Surge
         run: npm install --global surge
 
-      - name: Publicar pagina
-       run: surge --project ./ --domain LuisAntonioSantiago202010654.surge.sh --token ${{ secrets.SURGE_API_KEY }
-
+      - name: Desplegar página
+        run: surge --project ./ --domain ${{ secrets.SURGE_DOMAIN }} --token ${{ secrets.SURGE_API_KEY }}
