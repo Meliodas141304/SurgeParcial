@@ -16,6 +16,8 @@ jobs:
       - name: Instalar Surge
         run: npm install --global surge
           surge login --token ${{ secrets.SURGE_API_KEY }}
+          elfuertelobo20082@gmail.com
+          Meliodas141304121
           
       - name: Publicar pagina
         run: surge --project ./ --domain  www.luisantonio.surge.sh --token ${{ secrets.SURGE_API_KEY }}
