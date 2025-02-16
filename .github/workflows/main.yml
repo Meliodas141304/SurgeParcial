@@ -24,4 +24,5 @@ jobs:
       - name: Authenticate and Deploy to Surge
         run: |
           surge login --token ${{ secrets.SURGE_TOKEN }}  
-          surge --project ./ --domain luisantonio.surge.sh  
+          surge --project ./ --domain luisantonio.surge.sh --token ${{ secrets.SURGE_TOKEN }}
+ 
