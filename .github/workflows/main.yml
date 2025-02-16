@@ -1,25 +1,26 @@
-name: Pagina Surge.sh
+name: blicar Pagina a Surge.sh
 
 on:
   push:
     branches:
-      - main  # Esta es la rama que debe hacer el push
+      - main
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: SurgeParcial
-        uses: actions/checkout@v3
+    - name: Clonar el repositorio
+      uses: actions/checkout@v3
 
-      - name: Instalar Surge
-        run: npm install --global surge
-          surge login --token ${{ secrets.SURGE_API_KEY }}
-          
-      - name: Publicar pagina
+    name: Configura Node.js  
+        uses: acciones/configuracion-node@v3
+        with:
+          node-version: '22'
+
+    - name: Instalar Surge
+      run:  npm install --global surge
+      surge login --token ${{ secrets.SURGE_API_KEY }}
+
+    - name: Publicar pagina
         run: surge --project ./ --domain  www.luisantonio.surge.sh --token ${{ secrets.SURGE_API_KEY }}
-
-
-
-          
