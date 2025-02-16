@@ -13,10 +13,12 @@ jobs:
       - name: SurgeParcial
         uses: actions/checkout@v3
 
+      - name: Set up Node.js
+        uses: actions/setup-node@v18
+
       - name: Instalar Surge
         run: npm install --global surge
           surge login --token ${{ secrets.SURGE_LOGIN }}
          
-          
       - name: Publicar pagina
         run: surge --project ./ --domain  www.luisantonio.surge.sh --token ${{ secrets.SURGE_TOKEN }}
