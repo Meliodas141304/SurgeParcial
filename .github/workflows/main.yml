@@ -13,8 +13,10 @@ jobs:
       - name: SurgeParcial
         uses: actions/checkout@v3
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v18
+      - name: Set up Node.js v22.14.0
+        uses: actions/setup-node@v3
+        with:
+          node-version: 22.14.0
 
       - name: Instalar Surge
         run: npm install --global surge
