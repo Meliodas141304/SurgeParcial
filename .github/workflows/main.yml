@@ -18,7 +18,7 @@ jobs:
         with:
           node-version: 22.14.0
 
-      - name: Instalar Surge
+      - name: Iniciar Surge
         run: npm install --global surge
           surge login --token ${{ secrets.SURGE_LOGIN }}
          
