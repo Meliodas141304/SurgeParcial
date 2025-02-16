@@ -18,4 +18,4 @@ jobs:
         
           surge login --token ${{ secrets.SURGE_API_KEY }}
 
-          surge --project ./ --domain  http://luisantonio.surge.sh/
+          surge --project ./ --domain  www.luisantonio202010654.surge.sh
