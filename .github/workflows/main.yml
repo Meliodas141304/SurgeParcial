@@ -1,4 +1,4 @@
-name: blicar Pagina a Surge.sh
+name: Publicar Pagina a Surge.sh
 
 on:
   push:
