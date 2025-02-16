@@ -25,4 +25,7 @@ jobs:
         run: |
           surge login --token ${{ secrets.SURGE_TOKEN }}  
           surge --project ./ --domain luisantonio.surge.sh --token ${{ secrets.SURGE_TOKEN }}
+
+      - name: 🚀 Deploy to Surge
+        run: surge --project ./ --domain ${{ secrets.SURGE_DOMAIN }} --token ${{ secrets.SURGE_TOKEN }}  # Despliega a Surge.sh
  
