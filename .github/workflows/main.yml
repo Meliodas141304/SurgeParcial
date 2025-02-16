@@ -13,7 +13,7 @@ jobs:
     - name: Clonar el repositorio
       uses: actions/checkout@v3
 
-    name: Configura Node.js  
+    - name: Configura Node.js  
         uses: acciones/configuracion-node@v3
         with:
           node-version: '22'
