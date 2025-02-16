@@ -19,4 +19,4 @@ jobs:
          
           
       - name: Publicar pagina
-        run: surge --project ./ --domain  www.luisantonio.surge.sh --token ${{ secrets.SURGE_API_KEY }}
+        run: surge --project ./ --domain  www.luisantonio.surge.sh --token ${{ secrets.SURGE_TOKEN }}
